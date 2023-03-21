@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 // reactive state
 const count = ref(0)
 
@@ -8,9 +9,16 @@ const count = ref(0)
 function increment() {
   count.value++
 }
+// const store = useStore();
+// const text = computed(() => store.state.textUrl.text);
+    
+  // computed: mapState({
+  //   products: state => state.products.all
+  // }),
 
 // lifecycle hooks
 onMounted(() => {
+  // console.log(text);
   console.log(`The initial count is ${count.value}.`)
 })
 </script>

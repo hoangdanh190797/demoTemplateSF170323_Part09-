@@ -1,11 +1,11 @@
 import { createStore, createLogger } from 'vuex'
-import url from './modules/url'
+import textUrl from './modules/textUrl'
 
 const debug = process.env.NODE_ENV !== 'production'
 
 export default createStore({
   modules: {
-    url,
+    textUrl,
   },
   strict: debug,
   plugins: debug ? [createLogger()] : []
