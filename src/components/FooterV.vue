@@ -10,14 +10,14 @@ import IconInstagramV from './icons/IconInstagramV.vue';
 </script>
 
 <template>
-    <div class="flex flex-col bg-verydarkblue">
+    <div class="flex flex-col bg-verydarkblue laptop:flex-row">
         <br>
         <div class="m-auto">
             <img src="../assets/images/logo.svg" alt="" width="100">
             <IconLogoV />
         </div>
         <br>
-        <div class="m-auto text-center text-white">
+        <div class="m-auto text-center text-white laptop:flex laptop:space-x-12 laptop:text-left laptop:pt-4">
             <div>
                 <h1 class="font-bold">Features</h1>
                 <br>

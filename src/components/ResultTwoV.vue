@@ -1,10 +1,15 @@
 <template>
-    <div class="bg-white">
+    <div class="bg-white laptop:flex laptop:justify-between laptop:w-10/12 laptop:ml-28">
         <p class="p-3 font-bold">{{ newFullShortLink }}</p>
-        <hr> 
-        <p class="p-3 font-bold text-cyan">{{ newShortlink }}</p>
-        <div v-if="clicked"><button  @click="handleCopy" class="bg-cyan w-full h-12 rounded-lg text-xl text-white">Copy</button></div>
-        <div v-else><button v @click="handleCopy" class="bg-darkviolet w-full h-12 rounded-lg text-xl text-white">Copied</button></div>
+        <hr class="laptop:hidden">
+        <div class="laptop:flex">
+            <p class="p-3 font-bold text-cyan">{{ newShortlink }}</p>
+            <div v-if="clicked"><button @click="handleCopy"
+                    class="bg-cyan w-full h-12 rounded-lg text-xl text-white laptop:w-36">Copy</button></div>
+            <div v-else><button v @click="handleCopy"
+                    class="bg-darkviolet w-full h-12 rounded-lg text-xl text-white laptop:w-36">Copied!</button></div>
+        </div>
+
     </div>
 </template>
 <script>

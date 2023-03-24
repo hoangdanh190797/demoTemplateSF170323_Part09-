@@ -1,18 +1,25 @@
 <template>
-  <div class="flex flex-col bg-darkviolet w-10/12 h-44 m-auto mt-10 rounded-lg">
-    <div class="bg-input-bg z-10 h-full bg-no-repeat bg-right-top">
+  <div class="mobie:flex mobile:flex-col bg-darkviolet w-10/12 h-44 m-auto mt-10 rounded-lg laptop:flex-row">
+    <div
+      class="mobile:bg-input-bg laptop:bg-input-laptop-bg laptop:bg-cover z-10 h-full bg-no-repeat mobile:bg-right-top">
       <form v-on:submit.prevent="onSubmit">
-        <div class="px-6 pt-6 pb-3"><input type="text" ref="input" v-model="inputValue" class="w-full h-12 rounded-lg"
-            name="" id="" placeholder=" Shorten a link here..."></div>
-        <span v-if="inputError" class="text-red-500 pl-6 text-red">{{ inputError }}</span>
-        <div class="px-6"><button type="submit" class="bg-cyan w-full h-12 rounded-lg text-xl text-white">Shorten
-            It!</button></div>
+        <div class="laptop:flex">
+          <div class="laptop:w-8/12 laptop:mt-16 laptop:ml-10">
+            <div class="mobile:px-6 mobile:pt-6 mobile:pb-3 "><input type="text" ref="input" v-model="inputValue" class="w-full h-12 rounded-lg"
+                name="" id="" placeholder=" Shorten a link here..."></div>
+            <span v-if="inputError" class="text-red-500 pl-6 text-red">{{ inputError }}</span>
+          </div>
+          <div class="px-6 laptop:w-1/6 laptop:mt-16"><button type="submit"
+              class="bg-cyan w-full h-12 rounded-lg text-xl text-white ">Shorten
+              It!</button></div>
+        </div>
+
       </form>
     </div>
   </div>
-  <ResultOneV v-show="getNewStatus" class="p-6 m-6"/>
-  <ResultTwoV v-show="getNewStatus" class="p-6 m-6"/>
-  <ResultThreeV v-show="getNewStatus" class="p-6 m-6"/>
+  <ResultOneV v-show="getNewStatus" class="p-6 m-6" />
+  <ResultTwoV v-show="getNewStatus" class="p-6 m-6" />
+  <ResultThreeV v-show="getNewStatus" class="p-6 m-6" />
 </template>
 <script>
 import { computed } from 'vue'
